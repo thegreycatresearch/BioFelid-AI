@@ -8,7 +8,7 @@ BioFelid AI aggregates evidence from **NCBI Gene**, **UniProt**, and **Ensembl**
 
 ## Demo
 
-🎥 [Watch the 3-minute demo](Link)
+🎥 [Watch the 1-minute demo](https://drive.google.com/file/d/1HdIK5Y50C5mhtJzxmMRssSvglmbmw9q4/view?usp=sharing)
 
 ## Problem
 
