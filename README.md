@@ -6,6 +6,30 @@ BioFelid AI aggregates evidence from **NCBI Gene**, **UniProt**, and **Ensembl**
 
 ---
 
+## Demo
+
+🎥 [Watch the 3-minute demo](Link)
+
+## Problem
+
+Conservation researchers face a fragmented evidence landscape when deciding which genes in threatened felids deserve further investigation. Relevant information is distributed across genomic databases, protein annotations, ortholog conservation data, threat assessments, and scientific literature. BioFelid AI brings these signals together into a structured research-prioritization workflow.
+
+## How it works
+
+Felid species + gene
+        ↓
+   NCBI Gene
+        ↓
+   UniProt
+        ↓
+   Ensembl
+        ↓
+ Threat / conservation / functional / variant / literature signals
+        ↓
+       BRPS
+        ↓
+ Research Priority Tier
+
 ## Features
 
 - **Species selector** — pre-loaded list of Felidae species with IUCN threat status
@@ -14,6 +38,49 @@ BioFelid AI aggregates evidence from **NCBI Gene**, **UniProt**, and **Ensembl**
 - **BRPS scoring** — outputs a 0–100 score and a tier: *Exploratory*, *Moderate*, or *High Priority*
 
 ---
+
+## Built with IBM Bob
+
+IBM Bob was used throughout the development of BioFelid AI as an AI-assisted software engineering partner.
+
+Bob supported the project across:
+
+- Application architecture and implementation
+- Frontend and backend development
+- API integration
+- Debugging and troubleshooting
+- Refactoring
+- Testing
+- Documentation
+- Iterative development and feature refinement
+
+The final system was iteratively developed with IBM Bob while the project architecture, scientific rationale, scoring methodology, and implementation decisions were evaluated and refined throughout development.
+
+## Challenge Alignment
+
+### Wildcard — Build Intelligent Systems for the Future of Work
+
+BioFelid AI is designed as an intelligent research assistant for conservation genomics.
+
+Instead of requiring researchers to manually collect and compare evidence across multiple biological databases, BioFelid AI automates the initial evidence-gathering and prioritization workflow.
+
+The system helps researchers:
+
+- Reduce repetitive evidence-gathering work
+- Integrate heterogeneous biological information
+- Identify promising research targets
+- Compare evidence consistently across genes and species
+- Focus human expertise on deeper experimental investigation
+
+BioFelid AI is not intended to replace expert judgment. Its purpose is to augment researchers by turning fragmented biological evidence into a structured starting point for decision-making.
+
+## Limitations
+
+BioFelid AI is a research prioritization tool, not a diagnostic or clinical system.
+
+The BRPS is a transparent prioritization framework rather than a validated biological predictor. Its output should be interpreted as a hypothesis-generation and research-planning aid, not as evidence that a gene is biologically causal or experimentally superior.
+
+External database availability and API responses may also affect the completeness of individual analyses.
 
 ## Tech Stack
 
