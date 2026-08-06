@@ -1,204 +1,295 @@
 # BioFelid AI
 
-AI-assisted genomic prioritization tool for threatened felid conservation.
+> **AI-powered conservation genomics platform for endangered Felidae research.**
 
-BioFelid AI aggregates evidence from **NCBI Gene**, **UniProt**, and **Ensembl** to help researchers identify which genes in endangered or critically-threatened Felidae species deserve deeper experimental investigation. A custom scoring algorithm — the **BioFelid Research Priority Score (BRPS)** — synthesises threat status, conservation signals, functional relevance, variant evidence, and literature signals into a single actionable priority tier.
+BioFelid AI is an AI-assisted conservation genomics platform that helps researchers explore genomic evidence across endangered and threatened Felidae species.
 
----
+Instead of manually consulting multiple biological databases, BioFelid AI integrates genomic, protein, and comparative genomics evidence into a single interface, allowing researchers to rapidly inspect candidate genes for conservation research.
 
-## Demo
-
-🎥 [Watch the 1-minute demo](https://drive.google.com/file/d/1HdIK5Y50C5mhtJzxmMRssSvglmbmw9q4/view?usp=sharing)
-
-## Problem
-
-Conservation researchers face a fragmented evidence landscape when deciding which genes in threatened felids deserve further investigation. Relevant information is distributed across genomic databases, protein annotations, ortholog conservation data, threat assessments, and scientific literature. BioFelid AI brings these signals together into a structured research-prioritization workflow.
-
-## How it works
-
-Felid species + gene
-        ↓
-   NCBI Gene
-        ↓
-   UniProt
-        ↓
-   Ensembl
-        ↓
- Threat / conservation / functional / variant / literature signals
-        ↓
-       BRPS
-        ↓
- Research Priority Tier
-
-## Features
-
-- **Species selector** — pre-loaded list of Felidae species with IUCN threat status
-- **Gene search** — live autocomplete backed by NCBI Gene (debounced, per-species)
-- **Multi-source evidence** — NCBI genomic location, UniProt protein annotation, Ensembl ortholog conservation metrics
-- **BRPS scoring** — outputs a 0–100 score and a tier: *Exploratory*, *Moderate*, or *High Priority*
+The platform currently integrates **NCBI Gene**, **UniProt**, and **Ensembl Compara**, providing a unified workflow for biological evidence exploration.
 
 ---
 
-## Built with IBM Bob
+# Demo
 
-IBM Bob was used throughout the development of BioFelid AI as an AI-assisted software engineering partner.
+**Video demonstration**
 
-Bob supported the project across:
+https://drive.google.com/file/d/1HdIK5Y50C5mhtJzxmMRssSvglmbmw9q4/view?usp=drive_link
 
-- Application architecture and implementation
-- Frontend and backend development
+---
+
+# The Problem
+
+Conservation genomics research requires scientists to gather information from numerous independent biological databases.
+
+To evaluate a single candidate gene, researchers often need to manually inspect:
+
+- genomic annotation
+- protein annotation
+- comparative genomics
+- ortholog conservation
+- species information
+
+This process is repetitive, fragmented, and time-consuming.
+
+BioFelid AI simplifies this workflow by automatically aggregating biological evidence into a single interface.
+
+---
+
+# How It Works
+
+```text
+Select a Felidae species
+          │
+          ▼
+Search a candidate gene
+          │
+          ▼
+Retrieve biological evidence
+ ├── NCBI Gene
+ ├── UniProt
+ └── Ensembl Compara
+          │
+          ▼
+Integrated evidence report
+```
+
+---
+
+# Features
+
+- Interactive Felidae species selector
+- Conservation status displayed for every species
+- Intelligent gene search powered by NCBI Gene
+- Automatic retrieval of genomic annotations
+- Protein information from UniProt
+- Comparative genomics using Ensembl Compara
+- Felidae ortholog analysis
+- Protein identity metrics across species
+- Fast React interface
+- FastAPI backend
+- Modular architecture designed for future expansion
+
+---
+
+# Built with IBM Bob
+
+BioFelid AI was developed with **IBM Bob** as the primary AI-assisted software engineering partner.
+
+Throughout development, IBM Bob assisted with:
+
+- application architecture
+- backend implementation
+- frontend development
 - API integration
-- Debugging and troubleshooting
-- Refactoring
-- Testing
-- Documentation
-- Iterative development and feature refinement
+- debugging
+- refactoring
+- testing
+- documentation
+- iterative feature development
 
-The final system was iteratively developed with IBM Bob while the project architecture, scientific rationale, scoring methodology, and implementation decisions were evaluated and refined throughout development.
+The scientific rationale, biological interpretation, software architecture, and implementation decisions were continuously refined during development with IBM Bob acting as an AI development assistant.
 
-## Challenge Alignment
+---
 
-### Wildcard — Build Intelligent Systems for the Future of Work
+# IBM Challenge Alignment
 
-BioFelid AI is designed as an intelligent research assistant for conservation genomics.
+## Wildcard — Build Intelligent Systems for the Future of Work
 
-Instead of requiring researchers to manually collect and compare evidence across multiple biological databases, BioFelid AI automates the initial evidence-gathering and prioritization workflow.
+BioFelid AI is designed as an intelligent assistant for conservation genomics research.
 
-The system helps researchers:
+Instead of replacing researchers, it augments scientific workflows by automatically collecting and organizing biological evidence from multiple authoritative databases.
 
-- Reduce repetitive evidence-gathering work
-- Integrate heterogeneous biological information
-- Identify promising research targets
-- Compare evidence consistently across genes and species
-- Focus human expertise on deeper experimental investigation
+The platform helps researchers:
 
-BioFelid AI is not intended to replace expert judgment. Its purpose is to augment researchers by turning fragmented biological evidence into a structured starting point for decision-making.
+- reduce repetitive evidence gathering
+- integrate heterogeneous biological data
+- rapidly inspect candidate genes
+- compare comparative genomics evidence
+- focus human expertise on biological interpretation rather than manual data collection
 
-## Limitations
+BioFelid AI is intended to support scientific decision-making, not replace expert judgment.
 
-BioFelid AI is a research prioritization tool, not a diagnostic or clinical system.
+---
 
-The BRPS is a transparent prioritization framework rather than a validated biological predictor. Its output should be interpreted as a hypothesis-generation and research-planning aid, not as evidence that a gene is biologically causal or experimentally superior.
+# Architecture
 
-External database availability and API responses may also affect the completeness of individual analyses.
+```text
+                React Frontend
+                       │
+                       ▼
+                FastAPI Backend
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+ NCBI Gene        UniProt REST     Ensembl REST
+```
 
-## Tech Stack
+---
+
+# Tech Stack
 
 | Layer | Technology |
-|---|---|
-| Frontend | React 19, Vite 8 |
-| Backend | FastAPI 0.141, Python 3.14 |
-| External APIs | NCBI Datasets, UniProt REST, Ensembl REST |
+|--------|------------|
+| Frontend | React 19 |
+| Build Tool | Vite |
+| Backend | FastAPI |
+| Language | Python 3.14 |
+| APIs | NCBI Datasets |
+| APIs | UniProt REST |
+| APIs | Ensembl REST |
+| AI Development | IBM Bob |
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 BioFelid-AI/
 ├── backend/
 │   ├── app/
 │   │   ├── api/
-│   │   │   └── routes.py          # /api/analyze, /api/genes, /api/species
+│   │   │   └── routes.py
 │   │   ├── data_sources/
-│   │   │   ├── ncbi.py            # NCBI Gene evidence
-│   │   │   ├── uniprot.py         # UniProt protein evidence
-│   │   │   ├── ensembl.py         # Ensembl ortholog evidence
-│   │   │   ├── taxonomy.py        # Felidae species list
-│   │   │   └── iucn.py            # IUCN threat status helpers
+│   │   │   ├── ncbi.py
+│   │   │   ├── uniprot.py
+│   │   │   ├── ensembl.py
+│   │   │   ├── taxonomy.py
+│   │   │   └── iucn.py
 │   │   ├── models/
-│   │   │   └── evidence.py        # Pydantic models
 │   │   ├── scoring/
-│   │   │   └── brps.py            # BRPS scoring algorithm
-│   │   └── main.py                # FastAPI app entry point
+│   │   └── main.py
 │   ├── tests/
 │   └── requirements.txt
+│
 └── frontend/
     ├── src/
-    │   ├── App.jsx                # Main UI component
-    │   └── App.css
-    ├── index.html
-    └── package.json
+    │   ├── App.jsx
+    │   ├── App.css
+    │   └── assets/
+    ├── package.json
+    └── vite.config.js
 ```
 
 ---
 
-## Getting Started
+# Getting Started
 
-### Prerequisites
+## Requirements
 
-- Python ≥ 3.12
-- Node.js ≥ 18
+- Python 3.12+
+- Node.js 18+
 
-### Backend
+---
+
+## Backend
 
 ```bash
 cd backend
 
-# Create and activate a virtual environment
 python -m venv .venv
-.venv\Scripts\activate        # Windows
-# source .venv/bin/activate   # macOS / Linux
 
-# Install dependencies
+# Windows
+.venv\Scripts\activate
+
+# Linux / macOS
+# source .venv/bin/activate
+
 pip install -r requirements.txt
 
-# Run the development server
 uvicorn app.main:app --reload
 ```
 
-The API will be available at `http://127.0.0.1:8000`.  
-Interactive docs: `http://127.0.0.1:8000/docs`
+Backend:
 
-### Frontend
+```
+http://127.0.0.1:8000
+```
+
+API documentation:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## Frontend
 
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`.
+Application:
 
----
-
-## API Endpoints
-
-| Method | Path | Description |
-|---|---|---|
-| `GET` | `/api/species` | List all Felidae species |
-| `GET` | `/api/genes?species=&query=` | Search genes for a species (NCBI) |
-| `GET` | `/api/analyze?species=&gene=` | Full multi-source evidence + BRPS score |
-| `GET` | `/health` | Health check |
-
----
-
-## BRPS Algorithm
-
-The **BioFelid Research Priority Score** is calculated as:
-
-| Component | Max points |
-|---|---|
-| IUCN Threat Status (LC→CR) | 0–20 |
-| Conservation score | 0–25 |
-| Functional relevance | 0–20 |
-| Variant evidence | 0–15 |
-| Literature signal | 0–20 |
-| **Total** | **0–100** |
-
-Tiers: **< 35** → Exploratory · **35–64** → Moderate · **≥ 65** → High Priority
-
----
-
-## Running Tests
-
-```bash
-cd backend
-pytest
+```
+http://localhost:5173
 ```
 
 ---
 
-## License
+# API Endpoints
 
-MIT
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/species` | Retrieve Felidae species |
+| GET | `/api/genes` | Search genes using NCBI |
+| GET | `/api/analyze` | Multi-source biological evidence |
+| GET | `/health` | Health check |
+
+---
+
+# Current Evidence Sources
+
+BioFelid AI currently integrates information from:
+
+- NCBI Gene
+- UniProt
+- Ensembl Compara
+
+These sources provide:
+
+- genomic annotation
+- chromosome location
+- exon counts
+- protein annotation
+- protein function
+- comparative genomics
+- Felidae orthologs
+- protein identity metrics
+
+---
+
+# Future Work
+
+Planned future versions include:
+
+- Biological pathway enrichment
+- Automated literature mining
+- Gene interaction networks
+- Variant pathogenicity evidence
+- Functional conservation scoring
+- AI-assisted biological interpretation
+- Exportable research reports
+
+---
+
+# Limitations
+
+BioFelid AI is a research-support platform.
+
+It aggregates publicly available biological evidence but **does not perform clinical interpretation, disease diagnosis, or extinction risk prediction.**
+
+Results should be interpreted as research-support information rather than definitive biological conclusions.
+
+External database availability may also affect individual analyses.
+
+---
+
+# License
+
+MIT License
