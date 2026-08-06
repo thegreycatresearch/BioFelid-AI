@@ -14,7 +14,7 @@ The platform currently integrates **NCBI Gene**, **UniProt**, and **Ensembl Comp
 
 **Video demonstration**
 
-https://drive.google.com/file/d/1HdIK5Y50C5mhtJzxmMRssSvglmbmw9q4/view?usp=drive_link
+[Watch the 1-minute demo](https://drive.google.com/file/d/1HdIK5Y50C5mhtJzxmMRssSvglmbmw9q4/view?usp=drive_link)
 
 ---
 
